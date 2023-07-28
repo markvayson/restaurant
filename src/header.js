@@ -1,4 +1,6 @@
 import "./main.css";
+import { cta, menuItems } from "./data";
+import { social } from "./footer";
 
 const logo = () => {
   const div = document.createElement("div");
@@ -20,8 +22,6 @@ const logo = () => {
 };
 
 const menuContainer = () => {
-  const menuItems = ["Delivery", "Bar", "Contacts"];
-
   const menu = document.createElement("div");
   menu.className = "md:grow flex items-center justify-center";
 
@@ -31,7 +31,7 @@ const menuContainer = () => {
 
   const menuLi = document.createElement("li");
   menuLi.className =
-    "w-10 h-12 bg-cyan-500 text-cyan-50 text-center rounded-md";
+    "w-10 md:hidden h-12 bg-cyan-500 text-cyan-50 text-center rounded-md";
   const menuBtn = document.createElement("button");
   menuBtn.addEventListener("click", showMenu);
   menuBtn.className = "md:hidden  font-bold text-2xl  p-2 rounded-xl";
@@ -49,15 +49,13 @@ const menuContainer = () => {
 
   menu.appendChild(ul);
 
-  const btns = ["github", "facebook"];
   const btnDiv = document.createElement("div");
   btnDiv.className = "hidden md:flex justify-evenly gap-2";
-  btns.forEach((btn) => {
-    const button = document.createElement("button");
-    button.className = "border border-gray-400 rounded-full p-2";
-    button.textContent = btn;
-    btnDiv.appendChild(button);
-  });
+
+  const facebook = social("facebook");
+  const github = social("github");
+  btnDiv.appendChild(facebook);
+  btnDiv.appendChild(github);
 
   menu.appendChild(btnDiv);
 
@@ -76,14 +74,13 @@ const showMenu = (e) => {
     e.target.textContent = "☰";
   }
 
-  console.log(e.target.textContent);
-
   menuItems.forEach((item) => {
     if (item.classList.contains("hidden"))
       return item.classList.remove("hidden");
     else return item.classList.add("hidden");
   });
 };
+
 const headerContent = () => {
   const header = document.createElement("header");
   header.classList.add("flex");

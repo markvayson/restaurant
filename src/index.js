@@ -1,10 +1,11 @@
 import "./main.css";
+import header from "./header.js";
+import main from "./mainContainer.js";
 
-const component = () => {
-  const element = document.createElement("div");
+const container = (() => {
+  const content = document.getElementById("content");
 
-  element.innerHTML = "hello world";
-  element.className = "bg-red-300";
+  content.appendChild(header);
 
-  return element;
-};
+  return content;
+})();

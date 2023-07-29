@@ -34,4 +34,3 @@ export const cta = {
   message: message,
   call: call,
 };
-export const menuItems = ["Delivery", "Bar", "Contacts"];

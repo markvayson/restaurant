@@ -1,1 +1,171 @@
-(()=>{"use strict";var e={};e.g=function(){if("object"==typeof globalThis)return globalThis;try{return this||new Function("return this")()}catch(e){if("object"==typeof window)return window}}(),(()=>{var t;e.g.importScripts&&(t=e.g.location+"");var n=e.g.document;if(!t&&n&&(n.currentScript&&(t=n.currentScript.src),!t)){var a=n.getElementsByTagName("script");if(a.length)for(var c=a.length-1;c>-1&&!t;)t=a[c--].src}if(!t)throw new Error("Automatic publicPath is not supported in this browser");t=t.replace(/#.*$/,"").replace(/\?.*$/,"").replace(/\/[^\/]+$/,"/"),e.p=t})();const t=e.p+"7bc903526169ee28e015.jpg",n=e.p+"3ee2b58ceb8d852499ff.png",a=e.p+"671eea5761b98765a679.png",c=e.p+"becce3688afebd65de62.png",d=e.p+"bb0bb6f299c6667a2e92.png",o={Who:{bg:e.p+"c561c503b83ca243ce91.png",details:"Meet Chef Merlin Moonshadow, a culinary magician renowned for blending traditional cooking techniques with a touch of sorcery. Alongside a team of skilled chefs and enchanting servers, he brings to life Enchanted Eats, where food becomes an extraordinary adventure."},What:{bg:t,details:"Enchanted Eats is not just a restaurant; it's a portal to a realm of fantasy and wonder. Indulge in innovative dishes inspired by legendary tales and mythical beings. Guests can concoct their own potions and solve riddles hidden within the menu for secret treats."},Where:{bg:t,details:"Nestled on the outskirts of a mystical forest, Enchanted Eats emerges from the pages of a storybook. The restaurant's ambiance, with floating candles and ancient tomes, adds to the magical experience. Located discreetly, it invites curious travelers and local residents seeking extraordinary dining."}},s={facebook:{icon:a,url:"#"},github:{icon:c,url:"https://github.com/markvayson/restaurant"},message:d,call:n},r=["Delivery","Bar","Contacts"],l=e=>{const t=document.createElement("a");t.href=s[e].url,t.target="_blank",t.className="border border-gray-400 rounded-full p-2";const n=new Image;return n.src=s[e].icon,n.className="w-8 h-8",t.appendChild(n),t},i=e=>{const t=document.querySelectorAll(".menu-list-item"),n=document.querySelector(".menu-container");"×"!==e.target.textContent?(n.classList.add("bg-cyan-500","w-32","text-white"),e.target.textContent="×"):(n.classList.remove("bg-cyan-500","w-32","text-white"),e.target.textContent="☰"),t.forEach((e=>e.classList.contains("hidden")?e.classList.remove("hidden"):e.classList.add("hidden")))},m=(()=>{const e=document.createElement("header");return e.classList.add("flex"),e.appendChild((()=>{const e=document.createElement("div");e.className="grow md:grow-0 whitespace-nowrap underline";const t=document.createElement("p"),n=document.createElement("span");return t.className="text-2xl font-bold",n.className="bg-cyan-500 text-white py-1 pr-1 rounded-lg",t.textContent="E",n.textContent="E",t.appendChild(n),e.appendChild(t),e})()),e.appendChild((()=>{const e=document.createElement("div");e.className="md:grow flex items-center justify-center";const t=document.createElement("ul");t.className="menu-container divide-y divide-y-reverse transition-all duration-300 absolute md:flex-row md:static md:bg-inherit flex flex-col gap-2 rounded-lg items-end  p-2 top-1 right-1 md:flex justify-evenly grow";const n=document.createElement("li");n.className="w-10 md:hidden h-12 bg-cyan-500 text-cyan-50 text-center rounded-md";const a=document.createElement("button");a.addEventListener("click",i),a.className="md:hidden  font-bold text-2xl  p-2 rounded-xl",a.textContent="☰",n.appendChild(a),t.appendChild(n),r.forEach((e=>{const n=document.createElement("li");n.className="menu-list-item  text-end hidden tracking-widest",n.textContent=e,t.appendChild(n)})),e.appendChild(t);const c=document.createElement("div");c.className="hidden md:flex justify-evenly gap-2";const d=l("facebook"),o=l("github");return c.appendChild(d),c.appendChild(o),e.appendChild(c),e})()),e})(),p=(()=>{const e=document.createElement("main");return e.className="grow flex md:flex md:items-start flex-col gap-5 items-center justify-evenly",e.appendChild((()=>{const e=document.createElement("div");e.className="w-full items-center gap-1 flex md:grow flex-col";const t=document.createElement("div"),n=document.createElement("p"),a=document.createElement("p"),c=document.createElement("span"),d=document.createElement("p");n.textContent="Welcome to,",n.className="text-2xl font-bold",a.textContent="Enchanted",a.className="text-4xl font-bold underline",c.textContent="Eats",c.className="bg-cyan-500 py-2 pr-2 rounded-lg text-white",a.appendChild(c),d.textContent='"Where Magic Meets Gastronomy"',d.className="text-lg",t.appendChild(n),t.appendChild(a),t.appendChild(d);const s=document.createElement("div");return s.className="flex justify-evenly md:gap-5 whitespace-nowrap w-full",Object.keys(o).forEach((e=>{const t=document.createElement("button");t.className="tab-button p-2 rounded-lg border border-gray-400 font-medium tracking-wider",t.textContent=e,"Who"===t.textContent&&t.classList.add("bg-cyan-500","text-white"),t.addEventListener("click",(()=>(e=>{Object.keys(o).filter((t=>t!==e)),document.querySelectorAll(".tab-button").forEach((t=>{t.textContent===e?t.classList.add("bg-cyan-500","text-white"):t.classList.remove("bg-cyan-500","text-white")}));const t=o[e],n=document.querySelector(".desc-bg"),a=document.querySelector(".desc-p");n.src=t.bg,a.textContent=t.details})(e))),s.appendChild(t)})),e.appendChild(t),e.appendChild(s),e})()),e.appendChild((e=>{const t=o.Who,n=document.createElement("div");n.className="grow flex relative md:flex-row md:items-start flex-col gap-5 items-center justify-evenly";const a=new Image;a.src=t.bg,a.className="desc-bg object-cover h-full";const c=document.createElement("p");return c.className="desc-p absolute font-medium tracking-wider text-justify top-1/2 text-white bg-slate-950 bg-opacity-80 p-2 w-full",c.textContent=t.details,n.appendChild(a),n.appendChild(c),n})()),e})();(()=>{const e=document.getElementById("content");e.appendChild(m),e.appendChild(p),e.appendChild((()=>{const e=document.createElement("footer");e.className="flex justify-between";const t=new Image,n=new Image;t.src=s.message,n.src=s.call,n.className="w-8 h-8",t.className="w-8 h-8";const a=document.createElement("div");a.className="flex gap-2 md:opacity-50 md:hover:opacity-100 md:fixed md:bottom-5 md:right-5";const c=document.createElement("button");c.className="border border-gray-400 rounded-full p-2",c.appendChild(t),a.appendChild(c);const d=document.createElement("button");d.className="border bg-cyan-500 border-cyan-400 rounded-full p-2",d.appendChild(n),a.appendChild(d);const o=document.createElement("div");o.className="flex md:hidden justify-center gap-2";const r=l("facebook"),i=l("github");return o.appendChild(r),o.appendChild(i),e.appendChild(a),e.appendChild(o),e})())})()})();
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/main.css":
+/*!**********************!*\
+  !*** ./src/main.css ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://rest/./src/main.css?");
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main.css */ \"./src/main.css\");\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu */ \"./src/menu.js\");\n/* harmony import */ var _logo_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./logo.js */ \"./src/logo.js\");\n/* harmony import */ var _mainContent_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mainContent.js */ \"./src/mainContent.js\");\n\n\n\n\nconsole.log(\"🚀 ~ file: index.js:5 ~ mainHeadings:\", (0,_mainContent_js__WEBPACK_IMPORTED_MODULE_3__.mainHeadings)());\nconst init = (() => {\n  const content = document.getElementById(\"content\");\n  const header = document.createElement(\"header\");\n  const main = document.createElement(\"main\");\n  const footer = document.createElement(\"footer\");\n\n  header.className = \"flex justify-between items-center\";\n  main.className = \"grid auto-rows-fr place-items-center\";\n  footer.className = \"bg-purple-300\";\n\n  header.appendChild((0,_logo_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\"Short\"));\n  header.appendChild(_menu__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n\n  main.appendChild((0,_mainContent_js__WEBPACK_IMPORTED_MODULE_3__.imgDiv)());\n  main.appendChild((0,_mainContent_js__WEBPACK_IMPORTED_MODULE_3__.mainHeadings)());\n\n  content.appendChild(header);\n  content.appendChild(main);\n  content.appendChild(footer);\n})();\n\n\n//# sourceURL=webpack://rest/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/logo.js":
+/*!*********************!*\
+  !*** ./src/logo.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst logo = (mode) => {\n  const p = document.createElement(\"p\");\n  const span = document.createElement(\"span\");\n  p.className = \"font-bold text-3xl\";\n  p.textContent = mode === \"Short\" ? \"E\" : \"Enchanted\";\n  span.textContent = mode === \"Short\" ? \"E\" : \"Eats\";\n  span.className =\n    \"bg-cyan-500 py-2 pr-2 text-white rounded-br-lg rounded-tl-lg\";\n\n  p.appendChild(span);\n  return p;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (logo);\n\n\n//# sourceURL=webpack://rest/./src/logo.js?");
+
+/***/ }),
+
+/***/ "./src/mainContent.js":
+/*!****************************!*\
+  !*** ./src/mainContent.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   imgDiv: () => (/* binding */ imgDiv),\n/* harmony export */   mainHeadings: () => (/* binding */ mainHeadings)\n/* harmony export */ });\n/* harmony import */ var _img_resto_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./img/resto.png */ \"./src/img/resto.png\");\n/* harmony import */ var _logo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./logo */ \"./src/logo.js\");\n\n\n\nconst imgDiv = () => {\n  const imgDiv = document.createElement(\"div\");\n  imgDiv.className = \"w-full\";\n\n  const img = new Image();\n  img.src = _img_resto_png__WEBPACK_IMPORTED_MODULE_0__;\n\n  imgDiv.appendChild(img);\n\n  return imgDiv;\n};\n\nconst mainHeadings = () => {\n  const textDiv = document.createElement(\"div\");\n  textDiv.className = \"flex gap-5 flex-col place-items-center\";\n  const world = document.createElement(\"span\");\n  world.textContent = \"NOW AVAILABLE NATIONWIDE\";\n  world.className = \"font-medium tracking-wider text-gray-600 text-lg\";\n  textDiv.appendChild(world);\n\n  const headings = document.createElement(\"h1\");\n  headings.className = \"leading-loose text-center text-2xl font-bold\";\n  headings.textContent = \"Welcome to\";\n\n  headings.appendChild((0,_logo__WEBPACK_IMPORTED_MODULE_1__[\"default\"])());\n\n  const ending = document.createElement(\"span\");\n  ending.className = \"text-xl\";\n  ending.textContent = \"Where Magic Meets Gastronomy\";\n\n  headings.appendChild(ending);\n\n  const btnDiv = document.createElement(\"div\");\n  btnDiv.className = \"grid grid-cols-2 gap-2\";\n  const arrBtns = [\"See More Photos\", \"Menu\"];\n  arrBtns.forEach((item) => {\n    const btn = document.createElement(\"button\");\n    btn.className =\n      \"first:bg-red-500 first:text-white p-2 rounded-lg text-lg border-red-500 text-red-500 border\";\n    btn.textContent = item;\n    btnDiv.appendChild(btn);\n  });\n  textDiv.appendChild(headings);\n  textDiv.appendChild(btnDiv);\n\n  return textDiv;\n};\n\n\n//# sourceURL=webpack://rest/./src/mainContent.js?");
+
+/***/ }),
+
+/***/ "./src/menu.js":
+/*!*********************!*\
+  !*** ./src/menu.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst menu = () => {\n  const text = \"≡\";\n  const menuItems = [\"Delivery\", \"Bar\", \"Contacts\"];\n  const div = document.createElement(\"div\");\n  div.className = \"\";\n  const ul = document.createElement(\"ul\");\n  ul.className =\n    \"menu-list hidden absolute text-xl w-full h-screen  top-20 right-0 flex flex-col gap-10 \";\n  const button = document.createElement(\"button\");\n  button.textContent = text;\n  button.className =\n    \"relative text-center transition-opacity duration-300 z-10 w-12 h-12 text-4xl border border-gray-200 py-1 px-2 rounded-md\";\n  button.addEventListener(\"click\", () => showMenu(button));\n  menuItems.forEach((item) => {\n    const li = document.createElement(\"li\");\n    li.className = \"border-b py-2 w-[90%]  place-self-center\";\n\n    const span = document.createElement(\"span\");\n    span.textContent = \"⦠\";\n\n    const btn = document.createElement(\"button\");\n    btn.className = \"w-full flex justify-between\";\n    btn.textContent = item;\n\n    btn.appendChild(span);\n    li.appendChild(btn);\n    ul.appendChild(li);\n  });\n\n  div.appendChild(button);\n  div.appendChild(ul);\n  return div;\n};\n\nconst showMenu = (button) => {\n  const menuList = document.querySelector(\".menu-list\");\n\n  button.classList.add(\"opacity-0\");\n  if (menuList.classList.contains(\"hidden\")) {\n    menuList.classList.remove(\"hidden\");\n    setTimeout(() => {\n      menuList.classList.remove(\"opacity-0\");\n      button.textContent = \"×\";\n      button.classList.remove(\"opacity-0\");\n    }, 150);\n  } else {\n    menuList.classList.add(\"opacity-0\");\n    setTimeout(() => {\n      menuList.classList.add(\"hidden\");\n      button.textContent = \"≡\";\n      button.classList.remove(\"opacity-0\");\n    }, 150);\n  }\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (menu());\n\n\n//# sourceURL=webpack://rest/./src/menu.js?");
+
+/***/ }),
+
+/***/ "./src/img/resto.png":
+/*!***************************!*\
+  !*** ./src/img/resto.png ***!
+  \***************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"a1f032e85bd34cc530df.png\";\n\n//# sourceURL=webpack://rest/./src/img/resto.png?");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && !scriptUrl) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.js");
+/******/ 	
+/******/ })()
+;

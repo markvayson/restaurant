@@ -8,9 +8,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "npx webpack --config webpack.config.dev.js",
-    "build": "webpack --config webpack.config.prod.js",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "keywords": [],
   "author": "",

@@ -4,24 +4,25 @@ import side from "./img/restoside.png";
 import seaside from "./img/restoseaside.png";
 import background from "./img/bg.png";
 
-const shuffleImg = (arr) => {
-  for (let i = 0; i < arr.length; i++) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
+import chef1 from "./img/chef1.png";
+import chef2 from "./img/chef2.png";
+import chef3 from "./img/chef3.png";
+import chef4 from "./img/chef4.png";
 
-  return arr;
-};
+import shuffleArray from "./shuffleArray";
 
 const imgDiv = (imgPaths) => {
-  let arr = [];
-  if (imgPaths === "headings") {
-    arr = [front, back, side, seaside];
-  }
-  const imgContainer = document.createElement("div");
-  imgContainer.className = "grid md:order-2 gap-2 grid-cols-2";
+  let obj = {
+    headings: [front, back, side, seaside],
+    Who: [chef1, chef2, chef3, chef4],
+    What: [chef1, chef2, chef3, chef4],
+    Where: [chef1, chef2, chef3, chef4],
+  };
 
-  const shuffledArr = shuffleImg(arr);
+  const imgContainer = document.createElement("div");
+  imgContainer.className = "grid p-5  gap-2 grid-cols-2";
+
+  const shuffledArr = shuffleArray(obj[imgPaths]);
   const topLeft = new Image();
   topLeft.src = shuffledArr[0];
   topLeft.className = "rounded-lg self-end shadow-xl";

@@ -7,7 +7,7 @@ const mainHeadings = () => {
 
   const textDiv = document.createElement("div");
   textDiv.className =
-    "flex gap-5 md:order-1 flex-col justify-self-center items-center";
+    "flex gap-5 md:order-1 md:place-self-center flex-col justify-self-center items-center";
 
   const world = document.createElement("span");
   world.textContent = "NOW AVAILABLE NATIONWIDE";

@@ -785,5 +785,9 @@ body {
   .md\:flex-col {
     flex-direction: column;
   }
+
+  .md\:place-self-center {
+    place-self: center;
+  }
 }
 

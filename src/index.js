@@ -12,7 +12,7 @@ const init = (() => {
   const footer = document.createElement("footer");
 
   header.className = "p-5 flex justify-between items-center";
-  main.className = "grid h-full  p-5 auto-rows-fr ";
+  main.className = "grid gap-10  p-5 auto-rows-fr ";
   footer.className = "bg-purple-300";
 
   header.appendChild(logo("Short"));

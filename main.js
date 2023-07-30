@@ -20,13 +20,33 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ }),
 
+/***/ "./src/contents.js":
+/*!*************************!*\
+  !*** ./src/contents.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _imgDiv__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./imgDiv */ \"./src/imgDiv.js\");\n\n\nconst contents = () => {\n  const content = document.createElement(\"div\");\n  content.className = \"bg-red-500 grid grid-cols-2\";\n\n  content.appendChild((0,_imgDiv__WEBPACK_IMPORTED_MODULE_0__[\"default\"])());\n\n  return content;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (contents());\n\n\n//# sourceURL=webpack://rest/./src/contents.js?");
+
+/***/ }),
+
+/***/ "./src/imgDiv.js":
+/*!***********************!*\
+  !*** ./src/imgDiv.js ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _img_restofront_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./img/restofront.png */ \"./src/img/restofront.png\");\n/* harmony import */ var _img_restoback_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./img/restoback.png */ \"./src/img/restoback.png\");\n/* harmony import */ var _img_restoside_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./img/restoside.png */ \"./src/img/restoside.png\");\n/* harmony import */ var _img_restoseaside_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./img/restoseaside.png */ \"./src/img/restoseaside.png\");\n/* harmony import */ var _img_bg_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./img/bg.png */ \"./src/img/bg.png\");\n\n\n\n\n\n\nconst shuffleImg = (arr) => {\n  for (let i = 0; i < arr.length; i++) {\n    const j = Math.floor(Math.random() * (i + 1));\n    [arr[i], arr[j]] = [arr[j], arr[i]];\n  }\n\n  return arr;\n};\n\nconst imgDiv = (imgPaths) => {\n  let arr = [];\n  if (imgPaths === \"headings\") {\n    arr = [_img_restofront_png__WEBPACK_IMPORTED_MODULE_0__, _img_restoback_png__WEBPACK_IMPORTED_MODULE_1__, _img_restoside_png__WEBPACK_IMPORTED_MODULE_2__, _img_restoseaside_png__WEBPACK_IMPORTED_MODULE_3__];\n  }\n  const imgContainer = document.createElement(\"div\");\n  imgContainer.className = \"grid md:order-2 gap-2 grid-cols-2\";\n\n  const shuffledArr = shuffleImg(arr);\n  const topLeft = new Image();\n  topLeft.src = shuffledArr[0];\n  topLeft.className = \"rounded-lg self-end shadow-xl\";\n  const topRight = new Image();\n  topRight.src = shuffledArr[1];\n  topRight.className = \"rounded-lg shadow-xl self-end w-10/12 h-10/12\";\n  const bottomLeft = new Image();\n  bottomLeft.src = shuffledArr[2];\n  bottomLeft.className =\n    \"rounded-lg shadow-xl justify-self-end w-10/12 h-10/12\";\n  const bottomRight = new Image();\n  bottomRight.src = shuffledArr[3];\n  bottomRight.className = \"rounded-lg shadow-xl\";\n\n  imgContainer.appendChild(topLeft);\n  imgContainer.appendChild(topRight);\n  imgContainer.appendChild(bottomLeft);\n  imgContainer.appendChild(bottomRight);\n\n  return imgContainer;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (imgDiv);\n\n\n//# sourceURL=webpack://rest/./src/imgDiv.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main.css */ \"./src/main.css\");\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu */ \"./src/menu.js\");\n/* harmony import */ var _logo_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./logo.js */ \"./src/logo.js\");\n/* harmony import */ var _mainContent_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mainContent.js */ \"./src/mainContent.js\");\n\n\n\n\nconsole.log(\"🚀 ~ file: index.js:5 ~ mainHeadings:\", (0,_mainContent_js__WEBPACK_IMPORTED_MODULE_3__.mainHeadings)());\nconst init = (() => {\n  const content = document.getElementById(\"content\");\n  const header = document.createElement(\"header\");\n  const main = document.createElement(\"main\");\n  const footer = document.createElement(\"footer\");\n\n  header.className = \"flex justify-between items-center\";\n  main.className = \"grid auto-rows-fr place-items-center\";\n  footer.className = \"bg-purple-300\";\n\n  header.appendChild((0,_logo_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\"Short\"));\n  header.appendChild(_menu__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n\n  main.appendChild((0,_mainContent_js__WEBPACK_IMPORTED_MODULE_3__.imgDiv)());\n  main.appendChild((0,_mainContent_js__WEBPACK_IMPORTED_MODULE_3__.mainHeadings)());\n\n  content.appendChild(header);\n  content.appendChild(main);\n  content.appendChild(footer);\n})();\n\n\n//# sourceURL=webpack://rest/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main.css */ \"./src/main.css\");\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu */ \"./src/menu.js\");\n/* harmony import */ var _logo_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./logo.js */ \"./src/logo.js\");\n/* harmony import */ var _mainContent_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mainContent.js */ \"./src/mainContent.js\");\n/* harmony import */ var _contents__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./contents */ \"./src/contents.js\");\n\n\n\n\n\n\nconsole.log(\"🚀 ~ file: index.js:5 ~ mainHeadings:\", (0,_mainContent_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])());\nconst init = (() => {\n  const content = document.getElementById(\"content\");\n  const header = document.createElement(\"header\");\n  const main = document.createElement(\"main\");\n  const footer = document.createElement(\"footer\");\n\n  header.className = \"p-5 flex justify-between items-center\";\n  main.className = \"grid h-full  p-5 auto-rows-fr \";\n  footer.className = \"bg-purple-300\";\n\n  header.appendChild((0,_logo_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\"Short\"));\n  header.appendChild(_menu__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n\n  main.appendChild((0,_mainContent_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])());\n  main.appendChild(_contents__WEBPACK_IMPORTED_MODULE_4__[\"default\"]);\n\n  content.appendChild(header);\n  content.appendChild(main);\n})();\n\n\n//# sourceURL=webpack://rest/./src/index.js?");
 
 /***/ }),
 
@@ -36,7 +56,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mai
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst logo = (mode) => {\n  const p = document.createElement(\"p\");\n  const span = document.createElement(\"span\");\n  p.className = \"font-bold text-3xl\";\n  p.textContent = mode === \"Short\" ? \"E\" : \"Enchanted\";\n  span.textContent = mode === \"Short\" ? \"E\" : \"Eats\";\n  span.className =\n    \"bg-cyan-500 py-2 pr-2 text-white rounded-br-lg rounded-tl-lg\";\n\n  p.appendChild(span);\n  return p;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (logo);\n\n\n//# sourceURL=webpack://rest/./src/logo.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst logo = (mode) => {\n  const p = document.createElement(\"p\");\n  const span = document.createElement(\"span\");\n  p.className = \"font-bold text-3xl\";\n  p.textContent = mode === \"Short\" ? \"E\" : \"Enchanted\";\n  span.textContent = mode === \"Short\" ? \"E\" : \"Eats\";\n  span.className =\n    \"bg-red-500 py-2 pr-2 text-white rounded-br-lg rounded-tl-lg\";\n\n  p.appendChild(span);\n  return p;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (logo);\n\n\n//# sourceURL=webpack://rest/./src/logo.js?");
 
 /***/ }),
 
@@ -46,7 +66,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   imgDiv: () => (/* binding */ imgDiv),\n/* harmony export */   mainHeadings: () => (/* binding */ mainHeadings)\n/* harmony export */ });\n/* harmony import */ var _img_resto_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./img/resto.png */ \"./src/img/resto.png\");\n/* harmony import */ var _logo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./logo */ \"./src/logo.js\");\n\n\n\nconst imgDiv = () => {\n  const imgDiv = document.createElement(\"div\");\n  imgDiv.className = \"w-full\";\n\n  const img = new Image();\n  img.src = _img_resto_png__WEBPACK_IMPORTED_MODULE_0__;\n\n  imgDiv.appendChild(img);\n\n  return imgDiv;\n};\n\nconst mainHeadings = () => {\n  const textDiv = document.createElement(\"div\");\n  textDiv.className = \"flex gap-5 flex-col place-items-center\";\n  const world = document.createElement(\"span\");\n  world.textContent = \"NOW AVAILABLE NATIONWIDE\";\n  world.className = \"font-medium tracking-wider text-gray-600 text-lg\";\n  textDiv.appendChild(world);\n\n  const headings = document.createElement(\"h1\");\n  headings.className = \"leading-loose text-center text-2xl font-bold\";\n  headings.textContent = \"Welcome to\";\n\n  headings.appendChild((0,_logo__WEBPACK_IMPORTED_MODULE_1__[\"default\"])());\n\n  const ending = document.createElement(\"span\");\n  ending.className = \"text-xl\";\n  ending.textContent = \"Where Magic Meets Gastronomy\";\n\n  headings.appendChild(ending);\n\n  const btnDiv = document.createElement(\"div\");\n  btnDiv.className = \"grid grid-cols-2 gap-2\";\n  const arrBtns = [\"See More Photos\", \"Menu\"];\n  arrBtns.forEach((item) => {\n    const btn = document.createElement(\"button\");\n    btn.className =\n      \"first:bg-red-500 first:text-white p-2 rounded-lg text-lg border-red-500 text-red-500 border\";\n    btn.textContent = item;\n    btnDiv.appendChild(btn);\n  });\n  textDiv.appendChild(headings);\n  textDiv.appendChild(btnDiv);\n\n  return textDiv;\n};\n\n\n//# sourceURL=webpack://rest/./src/mainContent.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _logo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./logo */ \"./src/logo.js\");\n/* harmony import */ var _imgDiv_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./imgDiv.js */ \"./src/imgDiv.js\");\n\n\n\nconst mainHeadings = () => {\n  const headings = document.createElement(\"div\");\n  headings.className = \"grid md:grid-cols-2 place-items-start gap-10 \";\n\n  const textDiv = document.createElement(\"div\");\n  textDiv.className =\n    \"flex gap-5 md:order-1 flex-col justify-self-center items-center\";\n\n  const world = document.createElement(\"span\");\n  world.textContent = \"NOW AVAILABLE NATIONWIDE\";\n  world.className = \"font-medium tracking-wider text-gray-600 text-lg\";\n  textDiv.appendChild(world);\n\n  const headginText = document.createElement(\"h1\");\n  headginText.className = \"leading-loose  text-center text-2xl font-bold\";\n  headginText.textContent = \"Welcome to\";\n\n  headginText.appendChild((0,_logo__WEBPACK_IMPORTED_MODULE_0__[\"default\"])());\n\n  const ending = document.createElement(\"span\");\n  ending.className = \"text-xl\";\n  ending.textContent = \"Where Magic Meets Gastronomy\";\n\n  headginText.appendChild(ending);\n\n  const btnDiv = document.createElement(\"div\");\n  btnDiv.className = \"grid grid-cols-2 gap-2\";\n  const arrBtns = [\"See More Photos\", \"Menu\"];\n  arrBtns.forEach((item) => {\n    const btn = document.createElement(\"button\");\n    btn.className =\n      \"first:bg-red-500 first:text-white p-2 rounded-lg text-lg border-red-500 text-red-500 border\";\n    btn.textContent = item;\n    btnDiv.appendChild(btn);\n  });\n  textDiv.appendChild(headginText);\n  textDiv.appendChild(btnDiv);\n\n  headings.appendChild((0,_imgDiv_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(\"headings\"));\n  headings.appendChild(textDiv);\n  return headings;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mainHeadings);\n\n\n//# sourceURL=webpack://rest/./src/mainContent.js?");
 
 /***/ }),
 
@@ -60,13 +80,53 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/img/resto.png":
-/*!***************************!*\
-  !*** ./src/img/resto.png ***!
-  \***************************/
+/***/ "./src/img/bg.png":
+/*!************************!*\
+  !*** ./src/img/bg.png ***!
+  \************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"a1f032e85bd34cc530df.png\";\n\n//# sourceURL=webpack://rest/./src/img/resto.png?");
+eval("module.exports = __webpack_require__.p + \"9b9c384f462777648d95.png\";\n\n//# sourceURL=webpack://rest/./src/img/bg.png?");
+
+/***/ }),
+
+/***/ "./src/img/restoback.png":
+/*!*******************************!*\
+  !*** ./src/img/restoback.png ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"f5ecb21b2ef75ae4a037.png\";\n\n//# sourceURL=webpack://rest/./src/img/restoback.png?");
+
+/***/ }),
+
+/***/ "./src/img/restofront.png":
+/*!********************************!*\
+  !*** ./src/img/restofront.png ***!
+  \********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"cd593cb95ea164859221.png\";\n\n//# sourceURL=webpack://rest/./src/img/restofront.png?");
+
+/***/ }),
+
+/***/ "./src/img/restoseaside.png":
+/*!**********************************!*\
+  !*** ./src/img/restoseaside.png ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"65b092e168778a837cbb.png\";\n\n//# sourceURL=webpack://rest/./src/img/restoseaside.png?");
+
+/***/ }),
+
+/***/ "./src/img/restoside.png":
+/*!*******************************!*\
+  !*** ./src/img/restoside.png ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"2704d0bbcd08d56151c7.png\";\n\n//# sourceURL=webpack://rest/./src/img/restoside.png?");
 
 /***/ })
 

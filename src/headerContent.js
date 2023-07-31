@@ -2,112 +2,76 @@ import logo from "./logo.js";
 
 const headerTitle = () => {
   const div = document.createElement("div");
-  div.className = "flex justify-between items-center w-full";
+  div.className = "flex md:w-auto justify-between items-center w-full";
   div.appendChild(logo("Short"));
 
   const menuBtn = document.createElement("button");
   menuBtn.textContent = "≡";
+  menuBtn.id = "burger-menu-btn";
   menuBtn.className =
-    "text-3xl border px-2 py-1 transition-opacity duration-300 rounded-md border-gray-100";
-  menuBtn.addEventListener("click", showMenu);
+    "text-3xl border md:hidden px-2 py-1 transition-opacity duration-300 rounded-md border-gray-100";
+  menuBtn.addEventListener("click", showList);
   div.appendChild(menuBtn);
+
   return div;
 };
 
-const showMenu = () => {
-  const header = document.querySelector("header");
+const showList = () => {
+  const target = document.getElementById("burger-menu-btn");
+  const menuIcon = "≡";
+  target.textContent = target.textContent === menuIcon ? "×" : menuIcon;
   const main = document.querySelector("main");
-  if (header) {
-    const list = header.querySelector("ul");
-    if (list) {
-      main.classList.remove("hidden");
-      header.removeChild(list);
-    } else {
-      main.classList.add("hidden");
-      header.appendChild(menuList());
-    }
+
+  const menuList = document.getElementById("menu-list");
+  if (menuList.classList.contains("hidden")) {
+    main.classList.add("hidden");
+    return menuList.classList.remove("hidden");
+  } else {
+    main.classList.remove("hidden");
+    menuList.classList.add("hidden");
   }
+};
+
+const headerList = () => {
+  const list = document.createElement("ul");
+  list.id = "menu-list";
+  list.className = "grid hidden auto-rows-fr p-2";
+  const items = ["about", "menu"];
+  items.forEach((item) => {
+    const li = document.createElement("li");
+    li.textContent = item;
+    li.id = item;
+    li.className = "text-xl p-2 border-b";
+    li.addEventListener("click", showContent);
+
+    list.appendChild(li);
+  });
+  const span = document.createElement("span");
+  span.textContent = "created by mark vayson";
+  list.appendChild(span);
+  return list;
+};
+
+const showContent = (e) => {
+  const aboutContainer = document.getElementById("about-container");
+  const menuContainer = document.getElementById("menu-container");
+
+  if (e.target.id === "about") {
+    aboutContainer.classList.remove("hidden");
+    menuContainer.classList.add("hidden");
+  } else {
+    aboutContainer.classList.add("hidden");
+    menuContainer.classList.remove("hidden");
+  }
+  return showList();
 };
 
 const headerContent = () => {
   const header = document.createElement("div");
-  header.className = "grid gap-5 w-full";
+  header.className = "flex flex-col gap-5 w-full";
   header.appendChild(headerTitle());
+  header.appendChild(headerList());
   return header;
-};
-
-const showSubMenu = (section) => {
-  const li = document.querySelector(`.${section}`);
-
-  const liSpan = li.querySelector("span");
-  liSpan.textContent = " ⦡ ";
-  const isNew = li.querySelector(".new-list");
-  if (isNew) {
-    isNew.classList.add("opacity-0");
-    liSpan.textContent = ">";
-    return li.removeChild(isNew);
-  }
-  const showMore = {
-    About: ["Who", "What", "Where"],
-    Menu: ["Foods", "Beverages"],
-    Contact: ["Message", "Live Chat"],
-  };
-  const main = document.querySelector("main");
-  const newList = document.createElement("ul");
-  newList.className = "new-list  pt-3 flex flex-col gap-5";
-  showMore[section].forEach((item) => {
-    const newItem = document.createElement("a");
-    newItem.href = `#${item}`;
-    newItem.textContent = item;
-    newItem.className = `text-black flex justify-between transition-opacity duration-300  ml-5 border-b`;
-    if (section === "About") {
-      newItem.addEventListener("click", hideMenu);
-    }
-    const span = document.createElement("span");
-    span.textContent = ">";
-    newItem.appendChild(span);
-
-    newList.appendChild(newItem);
-  });
-  li.appendChild(newList);
-  return li;
-};
-
-const hideMenu = () => {
-  const header = document.querySelector("header");
-  if (header) {
-    const ul = header.querySelector("ul");
-    if (ul) {
-      const main = document.querySelector("main");
-
-      main.classList.remove("hidden");
-      header.removeChild(ul);
-    }
-  }
-};
-
-const menuList = () => {
-  const ul = document.createElement("ul");
-  ul.className = "flex w-full  flex-col justify-around gap-2";
-  const menuItems = ["About", "Menu", "Contact"];
-  menuItems.forEach((item) => {
-    const li = document.createElement("li");
-    li.className = `${item}  p-2 font-bold first:text-red-500 flex flex-col justify-between`;
-
-    const btn = document.createElement("button");
-    btn.textContent = item;
-    btn.className = "flex border-b  tracking-widest justify-between";
-    btn.addEventListener("click", () => showSubMenu(item));
-    const span = document.createElement("span");
-    span.textContent = ">";
-
-    btn.appendChild(span);
-    li.appendChild(btn);
-
-    ul.appendChild(li);
-  });
-
-  return ul;
 };
 
 export default headerContent();

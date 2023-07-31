@@ -1,10 +1,11 @@
 import logo from "./logo";
 import imgDiv from "./imgDiv.js";
+import contents from "./contents";
 
 const mainHeadings = () => {
   const headings = document.createElement("div");
-  headings.className = "grid md:grid-cols-2 place-items-start gap-10 ";
-
+  headings.className = "grid  place-self-start gap-10 ";
+  headings.id = "about-container";
   const textDiv = document.createElement("div");
   textDiv.className =
     "flex gap-5 md:order-1 md:place-self-center flex-col justify-self-center items-center";
@@ -38,10 +39,18 @@ const mainHeadings = () => {
   });
   textDiv.appendChild(headginText);
   textDiv.appendChild(btnDiv);
+  const headers = document.createElement("div");
+  headers.className = "grid md:place-self-center md:grid-cols-2";
+  headers.appendChild(imgDiv("headings"));
+  headers.appendChild(textDiv);
 
-  headings.appendChild(imgDiv("headings"));
-  headings.appendChild(textDiv);
+  headings.appendChild(headers);
+
+  headings.appendChild(contents("Who", false));
+  headings.appendChild(contents("What", true));
+  headings.appendChild(contents("Where", false));
+
   return headings;
 };
 
-export default mainHeadings;
+export default mainHeadings();

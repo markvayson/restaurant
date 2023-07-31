@@ -36,7 +36,7 @@ const contents = (path, isReverse) => {
   intro.className = "flex gap-2 flex-col text-xl text-center p-5";
 
   const name = document.createElement("span");
-  name.className = "text-3xl font-bold tracking-wider";
+  name.className = "text-2xl md:text-3xl text-center font-bold tracking-wider";
   name.textContent = details[path].name;
 
   const info = document.createElement("p");

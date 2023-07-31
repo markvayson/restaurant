@@ -24,10 +24,8 @@ const showList = () => {
 
   const menuList = document.getElementById("menu-list");
   if (menuList.classList.contains("hidden")) {
-    main.classList.add("hidden");
     return menuList.classList.remove("hidden");
   } else {
-    main.classList.remove("hidden");
     menuList.classList.add("hidden");
   }
 };
@@ -35,19 +33,18 @@ const showList = () => {
 const headerList = () => {
   const list = document.createElement("ul");
   list.id = "menu-list";
-  list.className = "grid hidden auto-rows-fr p-2";
+  list.className = "hidden md:grid md:grid-cols-2  p-2";
   const items = ["about", "menu"];
   items.forEach((item) => {
     const li = document.createElement("li");
     li.textContent = item;
     li.id = item;
-    li.className = "text-xl p-2 border-b";
+    li.className = "text-xl p-2 md:z-10 md:border-none border-b";
     li.addEventListener("click", showContent);
 
     list.appendChild(li);
   });
   const span = document.createElement("span");
-  span.textContent = "created by mark vayson";
   list.appendChild(span);
   return list;
 };
@@ -68,7 +65,8 @@ const showContent = (e) => {
 
 const headerContent = () => {
   const header = document.createElement("div");
-  header.className = "flex flex-col gap-5 w-full";
+  header.className =
+    "flex md:flex-row md:justify-between flex-col gap-5 w-full";
   header.appendChild(headerTitle());
   header.appendChild(headerList());
   return header;
